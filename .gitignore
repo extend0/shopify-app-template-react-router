@@ -32,6 +32,7 @@ pnpm-lock.yaml
 
 # Local temp folder
 /tmp/
+*.tsbuildinfo
 
 # Sensitive Config Files
 shopify.app.toml

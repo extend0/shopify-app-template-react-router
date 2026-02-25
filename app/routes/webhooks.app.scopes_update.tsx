@@ -1,6 +1,6 @@
 import type { ActionFunctionArgs } from "react-router";
 import { authenticate } from "../shopify.server";
-import getDb from "../db.server";
+import { getDb } from "../db.server";
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const { payload, session, topic, shop } = await authenticate.webhook(request);

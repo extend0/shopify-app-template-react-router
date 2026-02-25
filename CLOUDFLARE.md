@@ -9,7 +9,7 @@ This is a fork of [shopify/shopify-app-template-react-router](https://github.com
 npx wrangler d1 create shopify-app-db
 # Paste the returned database_id into wrangler.jsonc
 
-# 2. Install dependencies (also runs cf-typegen to generate env.d.ts)
+# 2. Install dependencies
 npm install
 
 # 3. Apply D1 migrations to local dev database
@@ -29,8 +29,8 @@ wrangler secret put SHOPIFY_API_KEY
 # Apply migrations to production D1
 npx wrangler d1 migrations apply shopify-app-db
 
-# Deploy
-npm run deploy:workers
+# Deploy Worker
+npm run deploy:worker
 ```
 
 ---
@@ -52,7 +52,7 @@ When pulling updates from [shopify/shopify-app-template-react-router](https://gi
 | `@shopify/shopify-app-session-storage-prisma` | |
 
 **Removed scripts:** `start`, `docker-start`, `setup`, `prisma`
-**Added scripts:** `cf-typegen`, `deploy:workers`, `dev:local`, `postinstall`
+**Added scripts:** `cf-typegen`, `typegen`, `deploy:worker`, `deploy:shopify`, `deploy:all`, `dev:local`
 
 **Merge strategy:** When upstream bumps a shared package version (e.g. `@shopify/shopify-app-react-router`, `react`, `react-router`), manually adopt that version bump. Do not re-add the removed packages.
 
