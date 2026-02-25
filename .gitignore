@@ -32,7 +32,3 @@ pnpm-lock.yaml
 
 # Local temp folder
 /tmp/
-
-# Sensitive Config Files
-wrangler.jsonc
-shopify.app.toml
