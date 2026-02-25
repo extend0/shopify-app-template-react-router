@@ -1,13 +1,12 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "3929213b2cede6a0eee2dfcb4b151fc3"
-name = "testtemplate"
-application_url = "https://example.com"
+client_id = "REPLACE_WITH_YOUR_SHOPIFY_CLIENT_ID"
+name = "my-shopify-app"
+application_url = "https://your-app-domain.example.com"
 embedded = true
 
 [build]
 automatically_update_urls_on_dev = true
-include_config_on_deploy = true
 
 [webhooks]
 api_version = "2026-04"
@@ -25,4 +24,4 @@ api_version = "2026-04"
 scopes = "write_products"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [ "https://your-app-domain.example.com/api/auth" ]
