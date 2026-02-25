@@ -217,8 +217,8 @@ export default function Index() {
         </s-paragraph>
         <s-paragraph>
           <s-text>Database: </s-text>
-          <s-link href="https://www.prisma.io/" target="_blank">
-            Prisma
+          <s-link href="https://developers.cloudflare.com/d1/" target="_blank">
+            D1
           </s-link>
         </s-paragraph>
       </s-section>
