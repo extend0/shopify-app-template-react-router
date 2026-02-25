@@ -57,11 +57,11 @@ export default defineConfig({
         // Inject Shopify CLI environment variables into wrangler vars
         // so they're available via context.cloudflare.env in the workerd runtime
         config.vars ??= {};
-        config.vars.SHOPIFY_API_KEY = process.env.SHOPIFY_API_KEY ?? "";
-        config.vars.SHOPIFY_API_SECRET = process.env.SHOPIFY_API_SECRET ?? "";
-        config.vars.SHOPIFY_APP_URL = process.env.SHOPIFY_APP_URL ?? "";
-        config.vars.SCOPES = process.env.SCOPES ?? "";
-        config.vars.SHOP_CUSTOM_DOMAIN = process.env.SHOP_CUSTOM_DOMAIN ?? "";
+        if (process.env.SHOPIFY_API_KEY) config.vars.SHOPIFY_API_KEY = process.env.SHOPIFY_API_KEY;
+        if (process.env.SHOPIFY_API_SECRET) config.vars.SHOPIFY_API_SECRET = process.env.SHOPIFY_API_SECRET;
+        if (process.env.SHOPIFY_APP_URL) config.vars.SHOPIFY_APP_URL = process.env.SHOPIFY_APP_URL;
+        if (process.env.SCOPES) config.vars.SCOPES = process.env.SCOPES;
+        if (process.env.SHOP_CUSTOM_DOMAIN) config.vars.SHOP_CUSTOM_DOMAIN = process.env.SHOP_CUSTOM_DOMAIN;
       },
     }),
     reactRouter(),
