@@ -17,7 +17,7 @@ env.d.ts
 .env
 .env.*
 
-package-lock.json
+# npm lockfile is committed for reproducible installs
 yarn.lock
 pnpm-lock.yaml
 

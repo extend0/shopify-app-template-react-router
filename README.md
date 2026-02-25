@@ -96,24 +96,10 @@ To use one of these, you can use a different [datasource provider](https://www.p
 
 ### Build
 
-Build the app by running the command below with the package manager of your choice:
-
-Using yarn:
-
-```shell
-yarn build
-```
-
-Using npm:
+Build the app with npm:
 
 ```shell
 npm run build
-```
-
-Using pnpm:
-
-```shell
-pnpm run build
 ```
 
 ## Hosting

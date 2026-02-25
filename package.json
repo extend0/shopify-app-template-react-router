@@ -18,6 +18,7 @@
   "engines": {
     "node": ">=20.19 <22 || >=22.12"
   },
+  "packageManager": "npm@11.8.0",
   "dependencies": {
     "@cloudflare/workers-types": "^4.20260207.0",
     "@react-router/dev": "^7.12.0",
