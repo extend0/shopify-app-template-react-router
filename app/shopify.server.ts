@@ -19,11 +19,8 @@ type ShopifyBindings = ShopifyEnv & { DB?: D1Database };
 
 // Global state for the CF worker isolate
 declare global {
-  // eslint-disable-next-line no-var
   var shopifyDb: D1Database | undefined;
-  // eslint-disable-next-line no-var
   var shopifyAppInstance: ReturnType<typeof shopifyApp> | undefined;
-  // eslint-disable-next-line no-var
   var shopifyEnv: ShopifyEnv | undefined;
 }
 
