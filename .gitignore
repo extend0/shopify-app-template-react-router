@@ -9,9 +9,10 @@ node_modules
 /public/build/
 /public/_dev
 /app/public/build
-/prisma/dev.sqlite
-/prisma/dev.sqlite-journal
-database.sqlite
+# Cloudflare Workers
+.dev.vars
+.wrangler/
+env.d.ts
 
 .env
 .env.*

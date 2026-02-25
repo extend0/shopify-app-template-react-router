@@ -1,0 +1,9 @@
+# Copy this file to .dev.vars (gitignored) and fill in your values.
+# These are injected into the Cloudflare workerd runtime during local dev.
+# Shopify CLI also injects these automatically via vite.config.ts when running `shopify app dev`.
+
+SHOPIFY_API_KEY=
+SHOPIFY_API_SECRET=
+SHOPIFY_APP_URL=
+SCOPES=write_products
+SHOP_CUSTOM_DOMAIN=

@@ -4,43 +4,40 @@
   "scripts": {
     "build": "react-router build",
     "dev": "shopify app dev",
+    "dev:local": "react-router dev",
+    "cf-typegen": "wrangler types",
     "config:link": "shopify app config link",
     "generate": "shopify app generate",
     "deploy": "shopify app deploy",
+    "deploy:workers": "npm run build && wrangler deploy",
     "config:use": "shopify app config use",
     "env": "shopify app env",
-    "start": "react-router-serve ./build/server/index.js",
-    "docker-start": "npm run setup && npm run start",
-    "setup": "prisma generate && prisma migrate deploy",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "shopify": "shopify",
-    "prisma": "prisma",
     "graphql-codegen": "graphql-codegen",
     "vite": "vite",
-    "typecheck": "react-router typegen && tsc --noEmit"
+    "postinstall": "npm run cf-typegen",
+    "typecheck": "npm run cf-typegen && react-router typegen && tsc --noEmit && tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.workers.json"
   },
   "type": "module",
   "engines": {
     "node": ">=20.19 <22 || >=22.12"
   },
   "dependencies": {
-    "@prisma/client": "^6.16.3",
+    "@cloudflare/workers-types": "^4.20260207.0",
     "@react-router/dev": "^7.12.0",
     "@react-router/fs-routes": "^7.12.0",
-    "@react-router/node": "^7.12.0",
-    "@react-router/serve": "^7.12.0",
+    "@shopify/api-codegen-preset": "^1.2.0",
     "@shopify/app-bridge-react": "^4.2.4",
     "@shopify/shopify-app-react-router": "^1.1.0",
-    "@shopify/shopify-app-session-storage-prisma": "^8.0.0",
     "isbot": "^5.1.31",
-    "prisma": "^6.16.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router": "^7.12.0",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "devDependencies": {
-    "@shopify/api-codegen-preset": "^1.2.0",
+    "@cloudflare/vite-plugin": "^1.13.5",
     "@shopify/polaris-types": "^1.0.1",
     "@types/eslint": "^9.6.1",
     "@types/node": "^22.18.8",
@@ -57,7 +54,8 @@
     "graphql-config": "^5.1.1",
     "prettier": "^3.6.2",
     "typescript": "^5.9.3",
-    "vite": "^6.3.6"
+    "vite": "^6.3.6",
+    "wrangler": "^4.63.0"
   },
   "workspaces": {
     "packages": [
